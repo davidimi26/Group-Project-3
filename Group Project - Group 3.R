@@ -72,3 +72,35 @@ nrow(test_activities)
 dim(all_measurements)
 dim(all_subjects)
 dim(all_activities)
+    
+# 8 - Giving features table column names 
+names(features) <- c("index", "feature_name")
+
+# 9 - Finding measurements that are a mean or standard deviation 
+mean_std_features <- grep("-(mean|std)\\(\\)", features$feature_name)
+selected_features <- features$feature_name[mean_std_features]
+
+# 10 - Keeping the columns from combined measurements 
+all_measurements <- all_measurements[,mean_std_features]
+
+# 11 - Columns with measurement names 
+colnames(all_measurements) <- selected_features
+
+# 12 - Result 
+length(mean_std_features)
+dim(all_measurements)
+
+#13 - Activity and Subject columns clear names 
+names(activity_labels) <- c("activity_id", "activity")
+names(all_activities) <- "activity_id"
+names(all_subjects) <- "subject"
+
+#14 - Activity name for activity code 
+all_activities$activity <- activity_labels$activity[match(all_activities$activity_id, activity_labels$activity_id)]
+
+# 15 - Subject, measurements, activity in one table
+data_combined <- cbind(all_subjects, activity = all_activities$activity, all_measurements)
+
+# 16 - Checking result
+table(data_combined$activity)
+dim(data_combined)  
