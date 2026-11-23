@@ -104,3 +104,21 @@ data_combined <- cbind(all_subjects, activity = all_activities$activity, all_mea
 # 16 - Checking result
 table(data_combined$activity)
 dim(data_combined)  
+
+# 17 - Creating tidy dataset with average measurements for each subject and activity
+tidy_data <- aggregate(. ~ subject + activity,
+                       data = data_combined,
+                       FUN = mean)
+
+# 18 - Checking the tidy dataset
+dim(tidy_data)
+head(tidy_data)
+
+# 19 - Saving the datasets
+write.table(data_combined,
+            "data_combined.txt",
+            row.names = FALSE)
+write.table(tidy_data,
+            "tidy_dataset.txt",
+            row.names = FALSE)
+
