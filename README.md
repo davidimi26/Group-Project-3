@@ -28,7 +28,7 @@ and activity.
   
 ## How to run
 
-1. Open GroupWork.R in RStudio.
+1. Open Group Project - Group 3.R in RStudio.
 2. Select Session > Set Working Directory >
    To Source File Location.
 3. Install reshape2 once by running:
@@ -37,6 +37,12 @@ and activity.
   
 The script will download and extract the source data if it needs to.
 
+## How the script works 
+1. Merge training and test data (steps 1-7) Downloads the dataset, reads training and test files, and combines them into one dataset. 
+2. Extract relevant measurements (steps 8-12) Keeps only the mean and standard deviation measurements.
+3. Descriptive Activity Names (steps 13-16) Replaces the activity codes with activity names and joins the subject, measurements, and activity into a measurement table. 
+4. Label Data with descriptive names
+5. Create tidy data
 
 ## Expected results  
 
@@ -48,7 +54,5 @@ singular row dedicated to each subject and subject activity.
 
 
 ## Data source
-
-
-Human Activity Recognition Using Smartphones dataset.
+Human Activity Recognition Using Smartphones dataset (http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). 
 The download link is included in GroupWork.R.
