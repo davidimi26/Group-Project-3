@@ -122,3 +122,6 @@ write.table(tidy_data,
             "tidy_dataset.txt",
             row.names = FALSE)
 
+
+### AI Use Disclosure - Generative AI tools were used throughout the project as supplemental resources to assist with various aspects of the work, including brainstorming, troubleshooting code, clarifying concepts, improving organization, and refining written content. AI-generated suggestions and responses were reviewed, evaluated, and adapted by group members as appropriate. The group remained responsible for the project's analyses, decisions, interpretations, final content, and overall accuracy.
+
